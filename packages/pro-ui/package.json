@@ -1,0 +1,17 @@
+{
+  "name": "pro-ui",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc && mkdir -p dist && cp src/styles/index.css dist/index.css"
+  },
+  "dependencies": {
+    "@ant-design/icons": "^5.3.7",
+    "@ant-design/nextjs-registry": "^1.0.0",
+    "antd": "^5.18.0",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "react": "^17.0.0",
+    "tailwindcss": "^3.4.4"
+  }
+}
