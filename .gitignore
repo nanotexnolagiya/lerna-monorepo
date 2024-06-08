@@ -36,8 +36,10 @@ dist-ssr
 /coverage
 
 # next.js
-/.next/
-/out/
+.next/
+.swc/
+.*.env
+out/
 
 # production
 /build
