@@ -1,33 +1,35 @@
 /** @type {import('tailwindcss').Config} */
+import {
+  fontStyles,
+  colors
+} from "../../config/style.constants";
+
 module.exports = {
-  darkMode: 'selector',
+  darkMode: 'class',
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}", 
+    "./src/**/*.{js,jsx,ts,tsx}",
+    './styles/**/*.{css,scss}'
   ],
   theme: {
-    colors: {
-    background: "hsl(--background)"
-    // --foreground
-    // --card
-    // --card-foreground
-    // --popover
-    // --popover-foreground
-    // --primary
-    // --primary-foreground
-    // --secondary
-    // --secondary-foreground
-    // --muted
-    // --muted-foreground
-    // --accent
-    // --accent-foreground
-    // --destructive
-    // --destructive-foreground
-    // --border
-    // --input
-    // --ring
-    // --radius
-    },
+    colors,
     extend: {},
   },
-  plugins: [],
+  plugins: [function ({
+    addUtilities
+  }) {
+    const newUtilities = {}
+    for (let i = 1; i <= 10; i++) {
+      newUtilities[`.truncate-lines-${i}`] = {
+        display: '-webkit-box',
+        '-webkit-box-orient': 'vertical',
+        overflow: 'hidden',
+        'text-overflow': 'ellipsis',
+        '-webkit-line-clamp': `${i}`,
+      }
+    }
+    addUtilities({
+      ...newUtilities,
+      ...fontStyles
+    }, ['responsive', 'hover'])
+  }],
 }

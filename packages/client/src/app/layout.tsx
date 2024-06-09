@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
 import { RegistryProvider, UiKitProvider } from 'pro-ui';
 import Provider from '@/_trpc/provider';
-import '@/_styles/global.css';
+import '@/_styles/global.scss';
+import { ThemeProvider } from 'next-themes';
+import { cookies } from 'next/headers';
 
 export const metadata: Metadata = {
   title: 'Welcom Starter',
@@ -13,20 +15,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const theme = String(cookies().get('theme')?.value);
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <body>
-        <Provider>
-          <UiKitProvider
-            theme={{
-              token: {
-                colorPrimary: 'red',
-              },
-            }}
-          >
-            <RegistryProvider>{children}</RegistryProvider>
-          </UiKitProvider>
-        </Provider>
+        <ThemeProvider enableSystem={false} attribute="class">
+          <Provider>
+            <UiKitProvider providerTheme={theme}>
+              <RegistryProvider>{children}</RegistryProvider>
+            </UiKitProvider>
+          </Provider>
+        </ThemeProvider>
       </body>
     </html>
   );

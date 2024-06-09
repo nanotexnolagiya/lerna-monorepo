@@ -20,6 +20,6 @@
       "pro-ui": ["../pro-ui/src"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "../../config/style.constants.js"],
   "exclude": ["node_modules"]
 }
