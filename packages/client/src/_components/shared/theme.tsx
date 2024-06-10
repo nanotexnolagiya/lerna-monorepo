@@ -1,7 +1,7 @@
 'use client';
 import { Moon, Sun } from 'lucide-react';
 import { useTheme } from 'next-themes';
-import { Button } from 'pro-ui';
+import Button from 'pro-ui/components/button';
 import { useEffect, useMemo, useState } from 'react';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';

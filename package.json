@@ -1,6 +1,8 @@
 {
 	"scripts": {
 		"build": "lerna run build --stream",
+		"start": "lerna run start --parallel",
+		"dev": "lerna run dev --parallel",
 		"release": "release-it"
 	},
 	"dependencies": {
