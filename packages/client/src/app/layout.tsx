@@ -1,7 +1,7 @@
+import '@/_styles/global.scss';
 import type { Metadata } from 'next';
 import { RegistryProvider, UiKitProvider } from 'pro-ui';
 import Provider from '@/_trpc/provider';
-import '@/_styles/global.scss';
 import { ThemeProvider } from 'next-themes';
 import { cookies } from 'next/headers';
 

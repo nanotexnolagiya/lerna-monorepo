@@ -12,9 +12,10 @@ const lightMode = {
   },
 };
 
-const darksMode = {
+const darksMode: ConfigProviderProps['theme'] = {
   token: {
     colorPrimary: COLORS.additional,
+    colorText: COLORS.secondary,
   },
 };
 
