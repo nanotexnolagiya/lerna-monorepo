@@ -20,8 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "pro-ui": ["../pro-ui/src"],
-      "pro-ui/*": ["../pro-ui/src/*"]
+      "pro-ui": ["../../packages/pro-ui/src"],
+      "pro-ui/*": ["../../packages/pro-ui/src/*"]
     }
   },
   "include": ["src", "../../config/style.constants.js"],
